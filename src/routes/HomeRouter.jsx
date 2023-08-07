@@ -2,9 +2,20 @@ import { register } from 'swiper/element/bundle';
 import ButtonSlot from "../components/slots/buttonSlot"
 import ImageSlot from "../components/slots/imageSlot"
 import ShoeSize from "../components/slots/shoeSizeSlot"
+import { useEffect } from 'react';
 register()
 
+let shoes;
+const fetchData = async(link) => { 
+    const conectApi = await fetch(link)
+    const shoesList = await conectApi.json()
+    shoes = shoesList
+}
+
+
+
 function Home(){ 
+    useEffect(()=>{fetchData("https://api.brchallenges.com/api/paqueta/shoes")},[])
 
     return(
         <>
@@ -164,18 +175,11 @@ function Home(){
 
         <section className="mt-10 mb-10">
             <h1 className="font-montserrat text-xl font-bold text-center">As melhores marcas estão aqui</h1>
-            <swiper-container slidesPerView="'1'" breakpoints="{
-                1024: {
-                    slidesPerView: 4,
-                },
-                768: {
-                    slidesPerView: 3,
-                },
-            }" centeredSlides="false" pagination="{ clickable: true, }" className="mySwiper pb-12">
+            <swiper-container slidesPerView="'1'" centeredSlides="false" pagination="{ clickable: true, }" className="mySwiper pb-12">
                 <swiper-slide >1123123213</swiper-slide>
                 <swiper-slide >1123123123</swiper-slide>
                 <swiper-slide >1123123123</swiper-slide>
-                <swiper-slide >1123123123123</swiper-slide>
+                <swiper-slide >1123123123</swiper-slide>
             </swiper-container>
 
             <div className="flex flex-wrap justify-between items-baseline mt-5">

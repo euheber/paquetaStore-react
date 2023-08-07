@@ -2,7 +2,7 @@ function shoeCard(){
     return (
         <>
     
-  </div>
+
         </>
     )
 }
