@@ -3,17 +3,17 @@ function header() {
     <header>
     <div className="bg-orange py-4">
       <div className="flex  items-center justify-between max-w-5xl m-auto px-3">
-        <p className="text-white text-sm font-normal">Loja de Calçados e Moda Online</p>
+        <p className="text-white text-sm font-normal cursor-default">Loja de Calçados e Moda Online</p>
 
         <div className="flex gap-4 ">
           <div className="flex md: items-center justify-center">
             <img src="/icons/phone.svg" alt="Icone de fone" />
-            <span className="hidden text-white font-montserrat ml-1 md:block">Fale conosco</span> 
+            <span className="hidden text-white font-montserrat ml-1 md:block cursor-default">Fale conosco</span> 
           </div>
 
           <div className="flex items-center justify-center">
             <img src="/icons/location.svg" alt="Icone de fone" />
-            <span className="hidden text-white font-montserrat ml-1 md:block">Encontrar uma loja física</span>
+            <span className="hidden text-white font-montserrat ml-1 md:block cursor-default">Encontrar uma loja física</span>
           </div>
         </div>
       </div>
