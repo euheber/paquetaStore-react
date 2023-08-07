@@ -9,3 +9,19 @@
   list-style-type: none;
   box-sizing: border-box;
 }
+
+
+.banner-hero {
+  background-image: url(/images/banner-hero.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.input::placeholder {
+  color: white;
+}
+
+body{
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,8 @@
+function shoeCard(){ 
+    return (
+        <>
+    
+  </div>
+        </>
+    )
+}
