@@ -13,9 +13,40 @@ const fetchData = async(link) => {
 }
 
 
+const mountSwiper = () => { 
+    const swiperEl = document.querySelector('swiper-container');
+
+    const swiperParams = {
+      breakpoints: {
+          slidesPerView: 1,
+          1024: {
+              slidesPerView: '4',
+          },
+          768: {
+              slidesPerView: '3',
+          },
+      },
+      on: {
+        init() {
+          // ...
+        },
+      },
+    };
+  
+    Object.assign(swiperEl, swiperParams);
+  
+    // and now initialize it
+    swiperEl.initialize();
+  
+}
+
+
 
 function Home(){ 
-    useEffect(()=>{fetchData("https://api.brchallenges.com/api/paqueta/shoes")},[])
+    useEffect( ()=>{
+        fetchData("https://api.brchallenges.com/api/paqueta/shoes")
+        mountSwiper()
+    },[])
 
     return(
         <>
@@ -175,11 +206,12 @@ function Home(){
 
         <section className="mt-10 mb-10">
             <h1 className="font-montserrat text-xl font-bold text-center">As melhores marcas estão aqui</h1>
-            <swiper-container slidesPerView="'1'" centeredSlides="false" pagination="{ clickable: true, }" className="mySwiper pb-12">
+            <swiper-container centeredSlides="false" pagination="{ clickable: true, }" init="false" className="mySwiper pb-12">
                 <swiper-slide >1123123213</swiper-slide>
-                <swiper-slide >1123123123</swiper-slide>
-                <swiper-slide >1123123123</swiper-slide>
-                <swiper-slide >1123123123</swiper-slide>
+                <swiper-slide >1123123213</swiper-slide>
+                <swiper-slide >1123123213</swiper-slide>
+                <swiper-slide >1123123213</swiper-slide>
+                <swiper-slide >1123123213</swiper-slide>
             </swiper-container>
 
             <div className="flex flex-wrap justify-between items-baseline mt-5">
@@ -193,6 +225,5 @@ function Home(){
         </>
     )
 }
-
 
 export default Home
