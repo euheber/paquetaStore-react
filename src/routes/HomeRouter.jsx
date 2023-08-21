@@ -12,7 +12,7 @@ const mountSwiper = () => {
 
   const swiperParams = {
     breakpoints: {
-      slidesPerView: '1',
+      slidesPerView: "1",
       1024: {
         slidesPerView: "4",
       },
@@ -39,7 +39,7 @@ const fetchData = async (link) => {
     const shoes = await conectApi.json()
     return shoes
   } catch (e) {
-    console.log('Aconteceu um erro durante o fetch de dados:', e)
+    console.log("Aconteceu um erro durante o fetch de dados:", e)
     return []
   }
 }
@@ -48,8 +48,9 @@ function Home() {
   const [shoeList, setShoeList] = useState([])
 
   useEffect(() => {
-      fetchData("https://api.brchallenges.com/api/paqueta/shoes")
-      .then(shoes => setShoeList(shoes))
+    fetchData("https://api.brchallenges.com/api/paqueta/shoes").then((shoes) =>
+      setShoeList(shoes)
+    )
 
     mountSwiper()
   }, [])
@@ -247,15 +248,13 @@ function Home() {
           <h1 className="font-montserrat text-xl font-bold text-center">
             As melhores marcas estão aqui
           </h1>
-          <swiper-container
-            centeredSlides="true"
-            pagination={{ clickable: true }}
-            init="false"
 
-            className="mySwiper pb-12"
-          >
-            {shoeSwiperList}
-          </swiper-container>
+          
+            <swiper-container init="false">
+              {shoeSwiperList}
+            </swiper-container>
+          
+
           <div className="flex flex-wrap justify-between items-baseline mt-5">
             <img src="/icons/adidas.svg" alt="" className="w-16" />
             <img src="/icons/viamarte.svg" alt="" className="w-24" />
