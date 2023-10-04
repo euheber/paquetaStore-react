@@ -1,4 +1,10 @@
+import { useSelector } from "react-redux"
+
+
 function header() {
+
+  const cartLength = useSelector((state) => state.counter.cart.length)
+
   return (
     <header>
     <div className="bg-orange py-4">
@@ -39,9 +45,8 @@ function header() {
             <router-link to="/carrinho">
               <img src="/icons/bag.svg" alt="ícone de carrinho de compras" className="w-7" />
             </router-link>
-            <span
-              className="absolute flex justify-center items-center bottom-4 left-5 bg-yellowish w-6 rounded-xl text-white font-normal">
-              1
+            <span className="absolute flex justify-center items-center bottom-4 left-5 bg-yellowish w-6 rounded-xl text-white font-normal"> 
+              {cartLength}
             </span>
           </li>
           <li>

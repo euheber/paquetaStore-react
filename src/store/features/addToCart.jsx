@@ -8,6 +8,7 @@ export const counterSlice = createSlice({
   },
   reducers: {
     increment: (state, shoe) => {
+
     state.cart.push(shoe)
     },
     

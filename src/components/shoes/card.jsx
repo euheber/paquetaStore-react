@@ -1,10 +1,10 @@
 import ButtonSlot from "../slots/buttonSlot"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { increment } from "../../store/features/addToCart"
 
 function shoeCard({ shoe }) {
   const timesX = Math.floor(Math.random() * 15) + 3
-  const count = useSelector((state) => state.counter.cart.length)
+
   const dispatch = useDispatch()
 
   return (
@@ -17,12 +17,11 @@ function shoeCard({ shoe }) {
         ) : (
           ""
         )}
-        <h1>estou aqui: {count} </h1>
+        
         <div className="w-44 h-90 flex flex-col justify-center items-center m-auto h-72">
-          <button className="ml-auto mt-1" onClick={() => { 
-            dispatch(increment(shoe))
-          }}>
-            <i className="fa-regular fa-heart text-orange"></i>
+  
+          <button className="ml-auto mt-1" >
+            <i className="fa-regular fa-heart text-orange"></i> 
           </button>
 
           <img src={shoe.image} alt="" className="h-28 w-36 mb-6" />
@@ -45,7 +44,7 @@ function shoeCard({ shoe }) {
           </span>
 
           {!shoe.soldout ? (
-            <ButtonSlot
+            <ButtonSlot onClick={() => dispatch(increment(shoe))}
               className={
                 "text-xs font-bold w-full mt-auto hover:text-shadeblack transition duration-500"
               }
